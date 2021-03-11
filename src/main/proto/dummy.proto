@@ -1,0 +1,17 @@
+syntax = "proto3";
+package com.demo.grpc;
+
+option java_multiple_files = true;
+
+message DummyRequest {
+  string name = 1;
+}
+
+message DummyResponse {
+  string result = 1;
+}
+
+service DummyService {
+  //Unary
+  rpc dummy(DummyRequest) returns (DummyResponse);
+}
