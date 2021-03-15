@@ -5,7 +5,7 @@ import com.demo.grpc.DummyResponse;
 import com.demo.grpc.DummyServiceGrpc;
 import io.grpc.stub.StreamObserver;
 
-public class DummyServiceImpl extends DummyServiceGrpc.DummyServiceImplBase {
+public class DummyUnaryServiceImpl extends DummyServiceGrpc.DummyServiceImplBase {
     @Override
     public void dummy(DummyRequest request, StreamObserver<DummyResponse> responseObserver) {
         String name = request.getName();

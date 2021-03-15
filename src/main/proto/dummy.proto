@@ -11,7 +11,30 @@ message DummyResponse {
   string result = 1;
 }
 
+message DummyManyTimesRequest {
+  string name = 1;
+}
+
+message DummyManyTimesResponse {
+  string result = 1;
+}
+
+message DummyManyTimesClientRequest {
+  string name = 1;
+}
+
+message DummyManyTimesClientResponse {
+  string result = 1;
+}
+
 service DummyService {
   //Unary
   rpc dummy(DummyRequest) returns (DummyResponse);
+
+  //Server Streaming
+  rpc dummyManyTimes(DummyManyTimesRequest) returns (stream DummyManyTimesResponse);
+
+  //Client Streaming
+
+  rpc dummyManyTimesClient(stream DummyManyTimesClientRequest) returns (DummyManyTimesClientResponse);
 }
